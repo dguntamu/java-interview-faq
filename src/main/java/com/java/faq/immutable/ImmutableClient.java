@@ -10,7 +10,8 @@ public class ImmutableClient {
         System.out.println(student);
 
         //Trying to update the Student content.
-        Address address1 = student.getAddress();
+//        Address address1 = student.getAddress();
+        Address address1 = Student.getInstance(address);
         address1.setCity("Bngl");
         address1.setCountry("US");
 

@@ -2,7 +2,7 @@ package com.java.faq.immutable;
 
 /**
  * Student is a Immutable class where as Address is NOT.
- * Step-1: final class Student -> so that child classes can't change the content of Student
+ * Step-1: final class Student -> so that child classes can't change the content of Student as its final
  * Step-2: Make the fields private, so that setter's are not required as we dont want to update the content.
  * Step-3: create Arg constructor to instantiate the Student object
  * Note: Address class is not final and its properties too not final, its mutable class
@@ -27,6 +27,10 @@ final class Student {
     }
 
     public Address getAddress() {
+        return new Address(address);
+    }
+
+    public static Address getInstance(Address address) {
         return new Address(address);
     }
 
