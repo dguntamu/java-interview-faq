@@ -1,9 +1,11 @@
 package com.java.proxy.dynamicproxy.handler;
 
 import com.java.proxy.dynamicproxy.Employee;
+import com.java.proxy.dynamicproxy.ITEmployee;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
+import java.lang.reflect.Proxy;
 
 public class EmployeeInvocationHandler implements InvocationHandler {
 
@@ -29,5 +31,17 @@ public class EmployeeInvocationHandler implements InvocationHandler {
         //post processing logic goes here
         System.out.println("Return value is --> "+result);
         return result;
+    }
+
+    /**
+     * This method returns the PROXY object
+     * @return
+     */
+    public Employee getProxy(){
+        return (Employee) Proxy
+                .newProxyInstance(
+                        ITEmployee.class.getClassLoader(),//Class loader
+                        new Class[]{Employee.class}, //Can have multiple implement classes
+                        this); //Handler
     }
 }

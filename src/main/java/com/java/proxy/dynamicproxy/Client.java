@@ -9,11 +9,10 @@ public class Client {
         ITEmployee itEmployee = new ITEmployee(100,50000,"Dhanu");
         EmployeeInvocationHandler employeeInvocationHandler = new EmployeeInvocationHandler(itEmployee);
 
-        Employee employee = (Employee) Proxy
-                .newProxyInstance(
-                        ITEmployee.class.getClassLoader(),//Class loader
-                        new Class[]{Employee.class}, //Can have multiple implement classes
-                        employeeInvocationHandler); //Handler
+        //Getting Proxy from Handler class, SOLID
+        Employee employee = employeeInvocationHandler.getProxy();
         employee.hikeSalary(2000);
     }
+
+
 }
