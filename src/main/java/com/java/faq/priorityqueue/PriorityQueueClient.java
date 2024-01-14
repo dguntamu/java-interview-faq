@@ -1,10 +1,9 @@
 package com.java.faq.priorityqueue;
 
-import java.util.Comparator;
 import java.util.PriorityQueue;
 import java.util.Queue;
 
-public class Client {
+public class PriorityQueueClient {
     public static void main(String[] args) {
         //Queue<Emp> empPriorityQueue = new PriorityQueue<>(Comparator.reverseOrder());
         Queue<Emp> empPriorityQueue = new PriorityQueue<>((emp1,emp2) -> emp1.getSalary() > emp2.getSalary() ? 1 : -1);
