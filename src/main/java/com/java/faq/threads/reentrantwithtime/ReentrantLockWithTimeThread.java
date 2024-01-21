@@ -1,7 +1,6 @@
 package com.java.faq.threads.reentrantwithtime;
 
 import java.util.concurrent.locks.ReentrantLock;
-import java.util.concurrent.TimeUnit;
 
 public class ReentrantLockWithTimeThread extends Thread {
     static ReentrantLock reentrantLock = new ReentrantLock();
