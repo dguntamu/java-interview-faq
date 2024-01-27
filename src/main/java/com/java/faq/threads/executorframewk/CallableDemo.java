@@ -25,6 +25,11 @@ class MyCallable implements Callable {
     int num;
 
     public MyCallable(int num) {
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
         this.num = num;
     }
 
